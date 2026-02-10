@@ -1,1 +1,1 @@
-# prj_python-api-nytimes-scraper
+# prj_python-api-nytimes
