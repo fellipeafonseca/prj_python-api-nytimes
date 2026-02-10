@@ -9,9 +9,7 @@ Este serviço faz parte de uma arquitetura baseada em **microsserviços**, sendo
 
 Esta API foi desenvolvida com foco em:
 
-- Arquitetura limpa
 - Separação de responsabilidades
-- Boas práticas de mercado
 - Containerização com Docker
 - Pronta para escalar e integrar com outros serviços
 
@@ -25,6 +23,7 @@ O scraper é responsável apenas pela **coleta dos dados**, enquanto esta API cu
 
 ## 🏗️ Arquitetura
 
+```
 [ Scraper (Selenium / Playwright) ]
 |
 v
@@ -33,6 +32,7 @@ v
 v
 [ PostgreSQL ]
 
+```
 
 - O scraper envia os dados via HTTP (POST)
 - A API valida e persiste os dados
@@ -54,6 +54,7 @@ v
 
 ## 📁 Estrutura do Projeto
 
+```
 api/
 ├── app/
 │ ├── main.py # Inicialização da aplicação
@@ -66,6 +67,7 @@ api/
 ├── requirements.txt
 └── .env
 
+```
 
 ---
 
@@ -77,14 +79,20 @@ Crie um arquivo `.env` na raiz do projeto:
 DATABASE_URL=postgresql://postgres:postgres@db:5432/nytimes
 ⚠️ Em ambientes produtivos, recomenda-se o uso de Docker Secrets ou ferramentas de gerenciamento de segredos.
 
+```
+
 ▶️ Como Executar o Projeto
 Pré-requisitos
 Docker
-
 Docker Compose
 
-Subindo os containers
+
+```Subindo os containers
+
 docker compose up --build
+
+```
+
 🌐 Acessos
 API:
 
