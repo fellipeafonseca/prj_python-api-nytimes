@@ -6,3 +6,9 @@ class NewsCreate(BaseModel):
     category: str
     url: str
     published_at: datetime
+
+class NewsResponse(NewsCreate):
+    id: int
+
+    class Config:
+        from_attributes = True
