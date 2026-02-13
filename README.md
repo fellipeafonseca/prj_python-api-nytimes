@@ -100,7 +100,7 @@ docker compose up --build
 ### Documentação automática (Swagger):
 - http://localhost:8000/docs
 
-##📤 Endpoint Principal
+## 📤 Endpoint Principal
 - Criar uma notícia
 - POST /news
 
@@ -113,18 +113,18 @@ docker compose up --build
 }
 ```
 
-##🧪 Validação e Persistência
+## 🧪 Validação e Persistência
 - Todos os dados são validados via Pydantic
 - As tabelas são criadas automaticamente na inicialização
 - URLs são únicas para evitar duplicidade de notícias
 
-##🔐 Segurança (Evolução planejada)
+## 🔐 Segurança (Evolução planejada)
 - Autenticação via JWT
 - Docker Secrets
 - Controle de acesso por serviço
 
 
-##👨‍💻 Autor
+## 👨‍💻 Autor
 Projeto desenvolvido para fins de portfólio profissional, demonstrando habilidades em:
 - Backend Python
 - APIs REST
