@@ -81,10 +81,10 @@ DATABASE_URL=postgresql://postgres:postgres@db:5432/nytimes
 
 ```
 
-▶️ Como Executar o Projeto
-Pré-requisitos
-Docker
-Docker Compose
+## ▶️ Como Executar o Projeto
+- Pré-requisitos
+- Docker
+- Docker Compose
 
 
 ```Subindo os containers
@@ -93,55 +93,40 @@ docker compose up --build
 
 ```
 
-🌐 Acessos
-API:
+## 🌐 Acessos
+### API:
+- http://localhost:8000
+- 
+### Documentação automática (Swagger):
+- http://localhost:8000/docs
 
-http://localhost:8000
-Documentação automática (Swagger):
+##📤 Endpoint Principal
+- Criar uma notícia
+- POST /news
 
-http://localhost:8000/docs
-📤 Endpoint Principal
-Criar uma notícia
-POST /news
-
+```
 {
   "title": "Example News Title",
   "category": "Technology",
   "url": "https://www.nytimes.com/example",
   "published_at": "2025-01-10T10:00:00"
 }
-🧪 Validação e Persistência
-Todos os dados são validados via Pydantic
+```
 
-As tabelas são criadas automaticamente na inicialização
+##🧪 Validação e Persistência
+- Todos os dados são validados via Pydantic
+- As tabelas são criadas automaticamente na inicialização
+- URLs são únicas para evitar duplicidade de notícias
 
-URLs são únicas para evitar duplicidade de notícias
+##🔐 Segurança (Evolução planejada)
+- Autenticação via JWT
+- Docker Secrets
+- Controle de acesso por serviço
 
-🔐 Segurança (Evolução planejada)
-Autenticação via JWT
 
-Docker Secrets
-
-Controle de acesso por serviço
-
-🚀 Próximos Passos
-Integração com Playwright
-
-Autenticação JWT
-
-Evitar duplicidade de notícias
-
-Logs estruturados
-
-Monitoramento e métricas
-
-👨‍💻 Autor
+##👨‍💻 Autor
 Projeto desenvolvido para fins de portfólio profissional, demonstrando habilidades em:
-
-Backend Python
-
-APIs REST
-
-Docker
-
-Arquitetura de microsserviços
+- Backend Python
+- APIs REST
+- Docker
+- Arquitetura de microsserviços
