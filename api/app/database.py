@@ -4,7 +4,10 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 from dotenv import load_dotenv
 from sqlalchemy.exc import OperationalError
+import logging
 
+
+logger = logging.getLogger(__name__)
 load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL")
@@ -17,13 +20,14 @@ for attempt in range(MAX_RETRIES):
     try:
         engine = create_engine(DATABASE_URL)
         engine.connect()
-        print("✅ Banco conectado com sucesso")
+        logger.info("✅ Banco conectado com sucesso")
         break
     except OperationalError:
-        print(f"⏳ Banco indisponível, tentativa {attempt + 1}/{MAX_RETRIES}")
+        logger.warning(f"⏳ Banco indisponível, tentativa {attempt + 1}/{MAX_RETRIES}")
         time.sleep(RETRY_DELAY)
 
 if engine is None:
+    logger.error("Não foi possível conectar ao banco", exc_info=True)
     raise RuntimeError("❌ Não foi possível conectar ao banco de dados")
 
 
